@@ -37,24 +37,31 @@
             android:text="监听" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_rect"
+    <LinearLayout
+        android:id="@+id/llLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="指定RectF高亮"
-        android:textAllCaps="false" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_multi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="多页引导页" />
+        <Button
+            android:id="@+id/btn_rect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="指定RectF高亮"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="列表" />
+        <Button
+            android:id="@+id/btn_multi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="多页引导页" />
+
+        <Button
+            android:id="@+id/btn_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="列表" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_relative"
@@ -62,4 +69,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:text="相对位置展示引导布局" />
+
+    <Button
+        android:text="demo"
+        android:id="@+id/btnDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

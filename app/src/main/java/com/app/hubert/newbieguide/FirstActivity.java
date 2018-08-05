@@ -1,13 +1,13 @@
 package com.app.hubert.newbieguide;
 
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.annotation.IntDef;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -23,18 +23,18 @@ import com.app.hubert.guide.model.GuidePage;
 import com.app.hubert.guide.model.HighLight;
 import com.app.hubert.guide.model.HighlightOptions;
 import com.app.hubert.guide.model.RelativeGuide;
-import com.app.hubert.guide.util.ViewUtils;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import com.app.hubert.newbieguide.test.Test1Activity;
 
 public class FirstActivity extends AppCompatActivity {
+
+    private View llLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         final Button btnSimple = (Button) findViewById(R.id.btn_simple);
+        llLayout = findViewById(R.id.llLayout);
         btnSimple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +45,9 @@ public class FirstActivity extends AppCompatActivity {
                         .addGuidePage(GuidePage.newInstance()
                                 .addHighLight(btnSimple)
                                 .addHighLight(new RectF(0, 800, 200, 1200))
-                                .setLayoutRes(R.layout.view_guide_simple))
+//                                .addHighLight(llLayout)
+                                .setEverywhereCancelable(false)
+                                .setLayoutRes(R.layout.view_guide_simple,R.id.image))
                         .show();
             }
         });
@@ -178,6 +180,14 @@ public class FirstActivity extends AppCompatActivity {
                                 .addHighLight(new RectF(0, 800, 500, 1000))
                         )
                         .show();
+            }
+        });
+
+
+        findViewById(R.id.btnDemo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FirstActivity.this, Test1Activity.class));
             }
         });
     }
